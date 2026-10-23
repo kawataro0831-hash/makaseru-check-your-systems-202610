@@ -11,3 +11,26 @@
 .voice .vc .ill.ph { height: 340px; border-radius: 16px; }
 
 .pair .col.ph.contain.xpost { background: #000; }
+
+
+.nzmap { display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; width: 100%; height: 100%; align-items: center; }
+.nzmap .grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; background: #262626; padding: 16px; border-radius: 12px; }
+.nzmap .b { background: #3a3a3a; border: 1.5px solid #555; border-radius: 4px; padding: 10px 4px; color: #e6e6e2; text-align: center; min-height: 92px; }
+.nzmap .b .no { font-size: 20px; font-weight: 700; letter-spacing: .04em; }
+.nzmap .b .fl { margin-top: 4px; font-size: 19px; color: #b5b5b0; }
+.nzmap .b.hit { background: var(--mark); border-color: var(--mark); color: var(--ink); }
+.nzmap .b.hit .fl { color: var(--ink); }
+.nzmap .b .nz { margin-top: 2px; font-size: 19px; font-weight: 900; }
+.nzmap .said { list-style: none; background: var(--card); border: 2px solid var(--line); border-radius: 12px; padding: 18px 28px; text-align: left; }
+.nzmap .said li { font-size: 26px; font-weight: 700; line-height: 1.45; padding: 12px 0; border-top: 1.5px solid var(--line); }
+.nzmap .said li:first-child { border-top: 0; }
+
+
+.embed.clickload { position: relative; cursor: pointer; background: #000; }
+.embed.clickload .poster { width: 100%; height: 100%; object-fit: cover; display: block; }
+.embed.clickload.loaded { cursor: default; }
+.embed.clickload .play { position: absolute; left: 50%; top: 50%; width: 92px; height: 92px; margin: -46px 0 0 -46px; border-radius: 50%; background: rgba(26,26,26,.78); }
+.embed.clickload .play::after { content: ""; position: absolute; left: 36px; top: 27px; border-left: 30px solid #fff; border-top: 19px solid transparent; border-bottom: 19px solid transparent; }
+.embed.clickload .vlabel { position: absolute; left: 14px; bottom: 12px; padding: 4px 12px; border-radius: 4px; background: rgba(26,26,26,.78); color: #fff; font-size: 19px; font-weight: 700; }
+body.sheet .embed.clickload .embed-off { display: none; }
+@media print { .embed.clickload .poster, .embed.clickload .play, .embed.clickload .vlabel { display: none; } }
