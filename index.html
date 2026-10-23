@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="MAKASERU">
+<title>AI WORLD TOUR Vol.11 仕組みを確かめる</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/deck.css">
+<link rel="stylesheet" href="assets/parts.css">
+<link rel="stylesheet" href="assets/local.css">
+<noscript><style>html,body{height:auto!important}body{overflow:auto!important}.stage{position:static!important;display:flex;flex-direction:column;align-items:center;gap:40px;padding:40px 0}.slide{position:relative!important;left:auto!important;top:auto!important;margin:0!important;visibility:visible!important;transform:none!important;flex:none}.st{opacity:1!important}.cover mark{background-size:100% 100%!important}.cover .cv-iso .l2,.cover .cv-iso .l3{opacity:1!important}</style></noscript>
+</head>
+<body>
+<div class="stage">
+
+<section class="slide cover">
+  <img class="cv-logo" src="images/makaseru-logo-black.png" alt="MAKASERU">
+  <p class="cv-series">AI WORLD TOUR</p>
+  <div class="cv-title">
+    <h1 class="hl">仕組みを<br><mark>確かめる</mark></h1>
+    <p class="cv-lead">作った仕組みの発表　今週の大事なニュース2つ</p>
+  </div>
+  <div class="cv-stack" aria-hidden="true">
+    <div class="cv-iso">
+      <img class="l1" src="images/cover/c1.png" alt="">
+      <img class="l2" src="images/cover/c2.png" alt="">
+      <img class="l3" src="images/cover/c3.png" alt="">
+      <i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i>
+    </div>
+  </div>
+  <div class="cv-foot">
+    <ol class="cv-index">
+      <li><b>01</b>仕組みの発表</li><li><b>02</b>PHP の穴</li><li><b>03</b>映画 NAZA</li>
+    </ol>
+  </div>
+</section>
+
+<section class="slide">
+  <p class="ttl">今日の流れ</p>
+  <div class="body">
+    <h2 class="hl">発表のあとに<mark>大事なニュースを2つ</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>順番</th><th>何をするか</th><th>目安</th></tr>
+        <tr class="st"><td>01 発表</td><td>作った仕組みを動かして見せる</td><td>50分</td></tr>
+        <tr class="st"><td>02 ニュース</td><td>PHP の穴　日本中のサイトが止まった理由</td><td>20分</td></tr>
+        <tr class="st"><td>03 ニュース</td><td>映画 NAZA ナザ　戦場の AI と伝えられないこと</td><td>25分</td></tr>
+        <tr class="st"><td>まとめ</td><td>次の1週間でやること</td><td>5分</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="pno" data-ch="はじめに"></p>
+</section>
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">01</p>
+    <h2 class="hl">仕組みの発表</h2>
+    <p class="note">作った仕組みを動かして見せる</p>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">前回の宿題</p>
+  <div class="body">
+    <h2 class="hl">この1週間で<mark>やってきたこと</mark></h2>
+    <div class="fig">
+      <ul class="checks c2 ex">
+        <li class="st">設計図を4つの部品で書く</li>
+        <li class="st">毎朝 Slack に届く仕組み</li>
+        <li class="st">倉庫は非公開で作る</li>
+        <li class="st">区切りで自動にセーブ</li>
+        <li class="st">セーブの履歴を残す</li>
+        <li class="st">通知が届くか試す</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 仕組みの発表"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">これまでに作った仕組み</p>
+  <div class="body">
+    <h2 class="hl">作った仕組みを<mark>並べてみる</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>いつ</th><th>作ったもの</th><th>今も動いている？</th></tr>
+        <tr class="st"><td>#4</td><td>メモがつながる図書館と司書のスキル</td><td>□</td></tr>
+        <tr class="st"><td>#5</td><td>kintone と Slack を AI につなぐ</td><td>□</td></tr>
+        <tr class="st"><td>#8</td><td>資料づくりのスキル</td><td>□</td></tr>
+        <tr class="st"><td>#10</td><td>毎朝 Slack に届く仕組み</td><td>□</td></tr>
+        <tr class="st"><td>自作</td><td>見積から請求までの kintone アプリ</td><td>□</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 仕組みの発表"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">発表の進め方</p>
+  <div class="body">
+    <h2 class="hl">1人ずつ<mark>動かして見せる</mark></h2>
+    <div class="fig">
+      <div class="flow narrow">
+        <div class="step st"><p class="lbl">01</p><p class="k">動かす</p><p class="d">画面を見せて<br>その場で動かす</p></div>
+        <div class="to">→</div>
+        <div class="step st hot"><p class="lbl">02</p><p class="k">説明する</p><p class="d">4つの部品で<br>言ってみる</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">03</p><p class="k">質問する</p><p class="d">聞く人が<br>3つだけ聞く</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 仕組みの発表"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">説明の枠</p>
+  <div class="body">
+    <h2 class="hl">自分の仕組みを<mark>4つの部品</mark>で言う</h2>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">トリガー</p><p class="k">いつ</p><p class="d">何をきっかけに<br>動き出す？</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">ソース元</p><p class="k">どこから</p><p class="d">材料はどこの<br>正本から？</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">処理</p><p class="k">何を</p><p class="d">どこで何に<br>作り変える？</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">届け先</p><p class="k">どこへ</p><p class="d">誰の目に<br>届く？</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 仕組みの発表"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">聞く人の質問</p>
+  <div class="body">
+    <h2 class="hl">聞く人は<mark>3つだけ</mark>質問する</h2>
+    <div class="fig">
+      <div class="ask3">
+        <div class="a st"><p class="no">01</p><p class="k">止まったら<br>誰が気づく？</p></div>
+        <div class="a st"><p class="no">02</p><p class="k">間違えたら<br>戻せる？</p></div>
+        <div class="a st"><p class="no">03</p><p class="k">ほかの人でも<br>動かせる？</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="01 仕組みの発表"></p>
+</section>
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">02</p>
+    <h2 class="hl">PHP の穴</h2>
+    <p class="note">今週 日本中のサイトが止まった</p>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">今週のニュース</p>
+  <div class="body">
+    <h2 class="hl">国の機関から通販まで<mark>サイトを止めた</mark></h2>
+    <div class="fig">
+      <div class="nw">
+        <div class="media"><img class="zoom" src="images/news/ipa_alert.jpg" alt="IPA の注意喚起のページ。PHP の脆弱性対策について（PHP2shell）2026年10月22日公開"></div>
+        <ul class="facts">
+          <li><p class="k">いつ</p><p class="v">10月21日 23時に修正版</p></li>
+          <li><p class="k">何が</p><p class="v">ログインなしで乗っ取られうる穴</p></li>
+          <li><p class="k">どこ</p><p class="v">国内で211の組織がサイトを止めた</p></li>
+          <li><p class="k">いま</p><p class="v">8.1 以前は公式の修正版が出ない</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: IPA 注意喚起（10月22日）／php.net（10月21日）／211は piyolog の集計</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">首相の呼びかけ</p>
+  <div class="body">
+    <h2 class="hl">首相が X で<mark>今夜の対応</mark>を頼んだ</h2>
+    <div class="fig">
+      <div class="qwrap ph">
+        <img class="face" src="images/photo/takaichi.jpg" alt="高市早苗内閣総理大臣の肖像写真">
+        <div class="q">
+          <p class="ja">「皆様に、<br>今夜に対応して頂きたい<br><mark>大至急のお願い</mark>です。」</p>
+          <p class="sub">10月21日 21時55分の X の投稿<br>首相が個別のソフトの穴で直接呼びかけるのは異例（ITmedia NEWS）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: 高市早苗 X（2026年10月21日 21:55）／ITmedia NEWS（10月22日）／写真: 首相官邸（CC BY 4.0）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">投稿の全文</p>
+  <div class="body">
+    <h2 class="hl">直せないなら<mark>止めるのも有効</mark>と書いた</h2>
+    <div class="fig">
+      <div class="pair wide-l">
+        <div class="col ph contain xpost"><img class="photo zoom" src="images/news/takaichi_x.png" alt="高市早苗首相の X の投稿の画面。PHP の重大な脆弱性への対応を呼びかける全文"></div>
+        <div class="col"><p class="lbl">投稿で頼んだこと</p><p class="k md">今夜の修正に備える</p>
+          <ul><li>PHP を使っているか確かめる</li><li>23時の修正をすぐ当てる準備</li><li>難しければサイトを一時停止</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: 高市早苗 X（2026年10月21日 21:55・表示 7,880万回）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill ph" src="images/photo/voice_php.png" alt="ノートパソコンを見ながら首をかしげて考える作業着の男性">
+      <div class="bubble">
+        <p class="lbl">よくある声</p>
+        <p class="say">「そもそも<br>PHP って何？」</p>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">PHP とは</p>
+  <div class="body">
+    <h2 class="hl">サイトの裏で<mark>ページを組み立てる係</mark></h2>
+    <div class="fig">
+      <div class="cards">
+        <div class="card st"><p class="no">お問い合わせ</p><p class="k">受け取る</p><p class="d">送った中身を<br>受け取って保存する</p></div>
+        <div class="card st"><p class="no">ネットショップ</p><p class="k">並べる</p><p class="d">在庫やカートの中身を<br>その場で表示する</p></div>
+        <div class="card st"><p class="no">会員ページ</p><p class="k">見分ける</p><p class="d">ログインした人の<br>名前や履歴を出す</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: php.net マニュアル「入門」「PHP の歴史」（1995年6月に公開）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">どれくらい使われているか</p>
+  <div class="body">
+    <h2 class="hl">.jp のサイトの<mark>8割以上</mark>が PHP</h2>
+    <div class="fig">
+      <div class="cards num">
+        <div class="card st"><p class="no">世界のサイト</p><p class="k">69%</p><p class="d">サーバー側の言語が<br>分かるサイトのうち</p></div>
+        <div class="card st"><p class="no">.jp のサイト</p><p class="k">84%</p><p class="d">日本のドメインの<br>サイトでは</p></div>
+        <div class="card st"><p class="no">WordPress</p><p class="k">40%</p><p class="d">全サイトのうち<br>WordPress だけで</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: W3Techs（2026年10月22日に確認）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide stmt wi">
+  <div class="body">
+    <h2 class="hl">共通の土台に<mark>ひびが入った</mark></h2>
+    <img class="ill" src="images/ill/php_base.png" alt="1つの長い基礎の上に5軒の家が並び、基礎に1本のひびが入っている。2人が見ている">
+  </div>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">乗っ取られると</p>
+  <div class="body">
+    <h2 class="hl">ログインなしで<mark>外から操作</mark>されてしまう</h2>
+    <div class="fig">
+      <div class="cards">
+        <div class="card st"><p class="no">01</p><p class="k">盗まれる</p><p class="d">会員の情報や<br>問い合わせの中身</p></div>
+        <div class="card st"><p class="no">02</p><p class="k">書き換え<br>られる</p><p class="d">偽のページや<br>偽の振込先</p></div>
+        <div class="card st"><p class="no">03</p><p class="k">踏み台に<br>される</p><p class="d">ほかの会社への<br>攻撃の足場</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: JPCERT/CC 注意喚起（10月22日）／CISA の評価「影響: total」</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">時系列</p>
+  <div class="body">
+    <h2 class="hl">兆しから修正まで<mark>2年かかった</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>いつ</th><th>何があったか</th></tr>
+        <tr class="st"><td>2024年</td><td>外部の監査で兆し　直し方が決まらず止まる</td></tr>
+        <tr class="st"><td>2026年8月</td><td>AI を使った調査で見つかり　開発チームに報告</td></tr>
+        <tr class="st"><td>10月17日</td><td>公表の4日前に　攻撃の試しが見つかる</td></tr>
+        <tr class="st"><td>10月21日</td><td>情報が漏れ　公表を1日早めて23時に修正版</td></tr>
+        <tr class="st"><td>10月22日</td><td>攻撃の試しが　数百万回に増える</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: PHP Foundation（10月21日）／Amazon（10月21日）／Cloudflare CEO の X（10月22日）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">見つけたのは</p>
+  <div class="body">
+    <h2 class="hl">穴を見つけたのは<mark>AI を使った調査</mark></h2>
+    <div class="fig">
+      <div class="illtext tight">
+        <div class="pic"><img class="ill ph" src="images/photo/researcher.png" alt="夜のオフィスで2台の画面のプログラムを真剣に見つめる技術者"></div>
+        <div class="panel">
+          <p class="lbl">各社と PHP 財団の発表</p>
+          <ol>
+            <li>Calif が OpenAI の AI で見つけた</li>
+            <li>Wiz も別に AI で見つけた</li>
+            <li>Wiz は修正の確認にも使った</li>
+            <li>判断と修正は人がした</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: OpenAI（10月21日）／Wiz（10月21日）／PHP Foundation（10月21日）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">過去の大きな穴と比べる</p>
+  <div class="body">
+    <h2 class="hl">世界が慌てる穴は<mark>数年に1度</mark>起きている</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>いつ</th><th>どこの穴か</th><th>何が起きたか</th></tr>
+        <tr class="st"><td>2014年</td><td>通信を暗号にする部品</td><td>パスワードが漏れるおそれ</td></tr>
+        <tr class="st"><td>2017年</td><td>Windows の共有機能</td><td>ホンダの工場も1日停止</td></tr>
+        <tr class="st"><td>2021年</td><td>多くのソフトの記録係</td><td>文字1行で乗っ取れた</td></tr>
+        <tr class="st"><td>2026年</td><td>日本のサイトの土台 PHP</td><td>国や銀行のサイトも停止</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: heartbleed.com／英 NAO（2017年）／MONOist（2017年6月23日）／CyberScoop（2021年）ほか</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">これから</p>
+  <div class="body">
+    <h2 class="hl">見つける速さに<mark>直す速さ</mark>が追いつかない</h2>
+    <div class="fig">
+      <div class="shift head sm">
+        <div class="row h"><p>これまで</p><p></p><p>これから</p><p>誰の見方</p></div>
+        <div class="row st"><p class="from">穴は人が何年もかけて探す</p><p class="arw">→</p><p class="to">AI で同じような発見が急増</p><p class="by">OpenAI</p></div>
+        <div class="row st"><p class="from">見つけるのが一番難しい</p><p class="arw">→</p><p class="to">確かめて直すのが追いつかない</p><p class="by">Anthropic</p></div>
+        <div class="row st"><p class="from">公表から攻撃まで数週間</p><p class="arw">→</p><p class="to">数日　この先さらに短く</p><p class="by">英 NCSC</p></div>
+        <div class="row st"><p class="from">更新は7日や30日で</p><p class="arw">→</p><p class="to">時間の単位で当てる</p><p class="by">Amazon</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: OpenAI・Amazon（2026年10月21日）／Anthropic（5月22日）／英 NCSC（2025年5月）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">分かっていること</p>
+  <div class="body">
+    <h2 class="hl">確かなことと<mark>まだ分からないこと</mark></h2>
+    <div class="fig">
+      <div class="cards">
+        <div class="card st"><p class="no">確か</p><p class="k">修正版が<br>出ている</p><p class="d">8.1 以前には<br>公式の修正版なし</p></div>
+        <div class="card st"><p class="no">有力な見方</p><p class="k">数年に1度<br>の大きさ</p><p class="d">広さと反応は大きい<br>悪用はより難しい</p></div>
+        <div class="card st"><p class="no">まだ分からない</p><p class="k">被害の数</p><p class="d">本当に乗っ取られた件数<br>人がどこで確かめたか</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: php.net／CISA・NCSC-NL（悪用は公表時点で未確認）／各社の発表</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">うちは？</p>
+  <div class="body">
+    <h2 class="hl">まず<mark>直す立場か</mark>を確かめる</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>使っているもの</th><th>直すのは誰</th><th>うちがやること</th></tr>
+        <tr class="st"><td>サービス型のサイトや EC</td><td>サービスの会社</td><td>お知らせを確かめる</td></tr>
+        <tr class="st"><td>レンタルサーバーと WordPress</td><td>サーバー会社と契約者</td><td>PHP の版を確かめる</td></tr>
+        <tr class="st"><td>制作会社に任せたサイト</td><td>制作会社</td><td>版と更新の約束を聞く</td></tr>
+        <tr class="st"><td>社内の機器やパッケージ</td><td>メーカー</td><td>メーカーのお知らせを見る</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: IPA 注意喚起（10月21日・22日）／JPCERT/CC（10月22日）／CISA（10月21日）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">そのまま送れる聞き方</p>
+  <div class="body">
+    <h2 class="hl">制作会社や<mark>サーバー会社に聞く</mark></h2>
+    <div class="fig">
+      <div class="prompt fit sm">当社のサイト（問い合わせフォームや予約を含む）は PHP で動いていますか。
+動いているなら、PHP は 8.2.35／8.3.36／8.4.27／8.5.12 以上になっていますか。
+8.1 以前の版なら、移す費用と、それまでサイトを止めるかの判断材料をください。
+10月17日以降に、不審なアクセスやエラーの記録がないか見てもらえますか。
+次に同じような緊急の修正が出たら、誰が何時間以内に当てる約束ですか。</div>
+    </div>
+  </div>
+  <p class="src">出典: php.net（修正版の番号）／IPA（10月22日）／JPCERT/CC（10月22日）</p>
+  <p class="pno" data-ch="ニュース1 PHP の穴"></p>
+</section>
+
+<section class="slide door">
+  <div class="body">
+    <p class="no">03</p>
+    <h2 class="hl">映画 NAZA ナザ</h2>
+    <p class="note">10月24日から日本の映画館で</p>
+  </div>
+  <p class="pno"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">どんな映画か</p>
+  <div class="body">
+    <h2 class="hl">兵士24人が<mark>顔を隠して</mark>語る</h2>
+    <div class="fig">
+      <div class="nw">
+        <div class="media"><img class="zoom" src="images/news/naza_main.jpg" alt="夜の屋上で向かい合って話す2人の影。後ろにテルアビブの高層ビル"></div>
+        <ul class="facts">
+          <li><p class="k">公開</p><p class="v">10月24日から全国52館で順に</p></li>
+          <li><p class="k">中身</p><p class="v">兵士と諜報員24人の匿名の証言</p></li>
+          <li><p class="k">作り手</p><p class="v">ノー・アザー・ランドの監督のうち2人</p></li>
+          <li><p class="k">評価</p><p class="v">ヴェネチアで審査員特別賞</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: 配給 トランスフォーマー公式サイト／The Guardian の発表（2026年9月24日）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">予告編（日本語字幕つき）</p>
+  <div class="body">
+    <h2 class="hl">NAZA は<mark>巻き添えで死ぬと見込む数</mark></h2>
+    <div class="fig">
+      <div class="nw">
+        <div class="media vid" data-yt="Whdo4Zx55g0" data-title="映画『NAZA ナザ』予告編" data-sub="株式会社トランスフォーマー（配給）公式 YouTube　2分3秒　日本語字幕は配給によるもの"><img src="images/news/yt_Whdo4Zx55g0.jpg" alt="夜のテルアビブの街並みに批評の言葉が重なる予告編の1場面"><span class="play"></span><span class="vlabel">日本語字幕つき 2分</span></div>
+        <ul class="facts">
+          <li><p class="k">問い</p><p class="v">「NAZA とは？」</p></li>
+          <li><p class="k">答え</p><p class="v">「犠牲にしてよい市民の数だ」</p></li>
+          <li><p class="k">証言</p><p class="v">「標的を生む工場だ」</p></li>
+          <li><p class="k">証言</p><p class="v">「1人の標的に対し<br>500人の犠牲を許されたことがある」</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: 配給 トランスフォーマー公式 YouTube「予告編」（台詞は配給の字幕を書き写した）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">監督は誰か</p>
+  <div class="body">
+    <h2 class="hl">監督は<mark>AI の標的選び</mark>を報じた記者</h2>
+    <div class="fig">
+      <div class="qwrap ph">
+        <img class="face" src="images/photo/abraham.jpg" alt="ヴェネチア国際映画祭の写真撮影に立つユヴァル・アブラハーム監督">
+        <div class="q">
+          <p class="ja">「犯罪を否定することが<br><mark>それを続けさせる</mark>のだと思う」</p>
+          <p class="sub">We believe that the denial of a crime is what helps it persist.<br>ユヴァル・アブラハーム（イスラエルの記者・監督）<br>ヴェネチアでの受賞の言葉（2026年9月）</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: Guardian News（2026年9月13日）／+972 Magazine／写真: LucaFazPhoto（CC BY-SA 4.0）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">監督の言葉（日本語字幕は講師訳）</p>
+  <div class="body">
+    <h2 class="hl">「15人」と言わず<mark>15ナザ</mark>と言う</h2>
+    <div class="fig">
+      <div class="nw">
+        <div class="media vid" data-yt="0M2JcojZ7Ao" data-segs="0-8,64.9-114.3" data-cues="cues-abraham" data-title="ユヴァル・アブラハーム監督「これは大量殺害の仕組みについての映画」" data-sub="The Guardian（YouTube）2026年10月17日公開　2つの場面をつないで約55秒　日本語字幕は講師訳"><img src="images/news/yt_0M2JcojZ7Ao.jpg" alt="上映会の壇上でマイクを持って話す監督2人"><span class="play"></span><span class="vlabel">日本語字幕つき 約55秒</span></div>
+        <script type="application/json" id="cues-abraham">[[0.0, 2.2, "これは 人を大量に殺す仕組みについての映画です"], [2.2, 8.0, "同時に 人が人にそれをできてしまう\n心の仕掛けも見ています"], [64.9, 71.0, "情報将校というと\n遠くから画面を眺める 切り離された人に見えます"], [71.0, 76.8, "ある程度はその通りで\n人を人と見ない言葉が出てきます"], [76.8, 85.0, "映画の中で1人が言うように\n「男も女も子どもも15人死ぬ」とは言わず「15ナザ」と言う"], [85.0, 93.0, "でも映画は その逆の面も見せています\n私が本当に衝撃を受けたのは"], [93.0, 100.5, "情報将校は いつもではないが多くの場合\n爆撃する家の電話のマイクを開いて"], [100.5, 105.8, "中の家族や子どもの声を\n聞くことができるということです"], [105.8, 111.5, "これから殺す相手について\nとても近いことを知っている"], [111.5, 114.3, "その両方があるのだと思います"]]</script>
+        <ul class="facts">
+          <li><p class="k">主題</p><p class="v">人を大量に殺す仕組みと<br>人がそれをできてしまう仕掛け</p></li>
+          <li><p class="k">言葉</p><p class="v">人の数を NAZA の数で呼ぶ<br>人を人と見なくなる</p></li>
+          <li><p class="k">逆の面</p><p class="v">爆撃する家の電話の声を<br>聞けることもある</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: The Guardian「NAZA directors」（YouTube 2026年10月17日）字幕は講師訳</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide voice">
+  <div class="body">
+    <div class="vc">
+      <img class="ill ph" src="images/photo/voice_naza.png" alt="夕方の部屋でタブレットのニュースを真剣な表情で読む女性">
+      <div class="bubble">
+        <p class="lbl">よくある声</p>
+        <p class="say">「AI は戦争で<br>何をしているの？」</p>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">報道された仕組み（軍は否定）</p>
+  <div class="body">
+    <h2 class="hl">報道では<mark>AI が標的の候補</mark>を出した</h2>
+    <div class="fig">
+      <div class="flow four">
+        <div class="step st"><p class="lbl">01</p><p class="k">集める</p><p class="d">ほぼ全住民の<br>監視のデータ</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">02</p><p class="k">点数</p><p class="d">AI が戦闘員<br>らしさを採点</p></div>
+        <div class="to">→</div>
+        <div class="step st hot"><p class="lbl">03</p><p class="k">確認</p><p class="d">人の確認は<br>1人約20秒</p></div>
+        <div class="to">→</div>
+        <div class="step st"><p class="lbl">04</p><p class="k">狙う</p><p class="d">自宅に戻った<br>ところを知らせる</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: +972 Magazine・The Guardian（2024年4月3日）情報将校6人の証言</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">証言に出てくる数字</p>
+  <div class="body">
+    <h2 class="hl">証言では<mark>20秒で1人</mark>を確かめた</h2>
+    <div class="fig">
+      <div class="cards num">
+        <div class="card st"><p class="no">標的の候補</p><p class="k">3.7万</p><p class="d">最も多い時に<br>AI が挙げた人の数</p></div>
+        <div class="card st"><p class="no">1人の確認</p><p class="k">20秒</p><p class="d">承認するまでに<br>かけた時間</p></div>
+        <div class="card st"><p class="no">誤り</p><p class="k">1割</p><p class="d">精度9割とされ<br>10件に1件は誤り</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: +972 Magazine・The Guardian（2024年4月3日）証言による数字</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">軍の説明</p>
+  <div class="body">
+    <h2 class="hl">軍は<mark>決めたのは人</mark>と反論した</h2>
+    <div class="fig">
+      <div class="pair">
+        <div class="col"><p class="lbl">報道と証言</p><p class="k md">AI の候補に判を押す</p>
+          <ul><li>候補は最大3.7万人</li><li>確認は1人約20秒</li><li>巻き添えの目安があった</li></ul></div>
+        <div class="col"><p class="lbl">イスラエル軍の説明</p><p class="k md">決めるのは人</p>
+          <ul><li>Lavender はデータベース</li><li>攻撃の判断は人だけが行う</li><li>過大な巻き添えの攻撃はしない</li></ul></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: The Guardian（2024年4月3日 軍の声明）／AFP（2026年9月11日）／The Guardian（10月1日）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">人の確認</p>
+  <div class="body">
+    <h2 class="hl">確認が20秒なら<mark>判を押すだけ</mark>になる</h2>
+    <div class="fig">
+      <div class="illtext tight">
+        <div class="pic"><img class="ill ph" src="images/photo/stamp_photo.png" alt="高く積まれた書類に次々と判を押す手元"></div>
+        <div class="panel">
+          <p class="lbl">情報将校の証言（2024年）</p>
+          <ol>
+            <li>1人に20秒　1日に何十人も</li>
+            <li>人としての付け足しはゼロ</li>
+            <li>承認の判を押すだけ</li>
+            <li>時間はずいぶん節約できた</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: +972 Magazine・The Guardian（2024年4月3日）／赤十字国際委員会（2025年9月26日）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">IT 企業との関わり</p>
+  <div class="body">
+    <h2 class="hl">身近な IT 企業の<mark>クラウドも使われた</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>会社</th><th>報じられたこと</th><th>会社の対応</th></tr>
+        <tr class="st"><td>Microsoft</td><td>傍受した通話を大量に保存</td><td>一部のサービスを停止</td></tr>
+        <tr class="st"><td>Google と Amazon</td><td>政府と大型のクラウド契約</td><td>違法な関わりは否定</td></tr>
+        <tr class="st"><td>米国の AI</td><td>軍の利用が開戦前の約200倍</td><td>OpenAI は提携なしと説明</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: The Guardian（2025年8月）／Microsoft（2025年9月）／+972（2025年10月）／AP（2025年2月）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">情報統制</p>
+  <div class="body">
+    <h2 class="hl">外からは<mark>確かめにくい</mark>戦場</h2>
+    <div class="fig">
+      <div class="cards four">
+        <div class="card st"><p class="no">外国の記者</p><p class="k">入れない</p><p class="d">2023年10月から<br>独自の取材は禁止</p></div>
+        <div class="card st"><p class="no">軍の検閲</p><p class="k">1,635件</p><p class="d">2024年に記事を<br>丸ごと差し止め</p></div>
+        <div class="card st"><p class="no">放送の停止</p><p class="k">法律で</p><p class="d">外国の放送局を<br>止められる</p></div>
+        <div class="card st"><p class="no">記者の死</p><p class="k">189人</p><p class="d">ガザで殺された<br>記者と報道関係者</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: +972 Magazine（2026年2月・6月）／Al Jazeera（2025年12月）／CPJ（2026年9月時点）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">誰が何を言っているか</p>
+  <div class="body">
+    <h2 class="hl">同じ出来事を<mark>違う言葉</mark>で語っている</h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>誰が</th><th>何を言っているか</th></tr>
+        <tr class="st"><td>監督と The Guardian</td><td>民間人を大量に殺す仕組みを証言で示した</td></tr>
+        <tr class="st"><td>イスラエル軍</td><td>ゆがんだ描写　攻撃の判断は人がした</td></tr>
+        <tr class="st"><td>イスラエル政府</td><td>反ユダヤの扇動　国籍剥奪の法案を表明</td></tr>
+        <tr class="st"><td>国連の事務総長</td><td>生死の判断を計算に委ねてはならない</td></tr>
+        <tr class="st"><td>国連人権理事会の委員会</td><td>ガザでジェノサイド　イスラエルは否定</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: AFP・The Guardian・Al Jazeera（2026年9〜10月）／国連（2024年4月・2025年9月）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">分けて見る</p>
+  <div class="body">
+    <h2 class="hl">証言と反論を<mark>分けて見る</mark></h2>
+    <div class="fig">
+      <div class="cards">
+        <div class="card st"><p class="no">確か</p><p class="k">24人の<br>証言</p><p class="d">映画祭で受賞<br>政府と軍は強く非難</p></div>
+        <div class="card st"><p class="no">有力な見方</p><p class="k">AI が<br>候補を出す</p><p class="d">報道と証言による<br>軍は人が決めたと反論</p></div>
+        <div class="card st"><p class="no">まだ分からない</p><p class="k">数字の<br>裏づけ</p><p class="d">証言の数字の真偽<br>民間人の本当の割合</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="src">出典: このニュースの各枚の出典（最後の出典の枚にまとめた）</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl">速くなるほど<br><mark>確かめる時間</mark>が削られる</h2>
+    <p class="note">人がどこで確かめるかを先に決めておく</p>
+  </div>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">映画を見るなら</p>
+  <div class="body">
+    <h2 class="hl">東京と神奈川で<mark>見られる映画館</mark></h2>
+    <div class="fig">
+      <table class="tbl sm">
+        <tr><th>場所</th><th>映画館</th><th>上映の始まり</th></tr>
+        <tr class="st"><td>東京 渋谷</td><td>シアター・イメージフォーラム</td><td>10月24日（土）から</td></tr>
+        <tr class="st"><td>東京 立川</td><td>kino cinema 立川髙島屋S.C.館</td><td>10月24日（土）から</td></tr>
+        <tr class="st"><td>東京 武蔵村山</td><td>イオンシネマむさし村山</td><td>10月24日（土）から</td></tr>
+        <tr class="st"><td>横浜 みなとみらい</td><td>kino cinema 横浜みなとみらい</td><td>10月24日（土）から</td></tr>
+        <tr class="st"><td>川崎 新百合ヶ丘</td><td>川崎市アートセンター</td><td>11月14日（土）から</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">出典: 配給公式サイトの劇場一覧（2026年10月22日に確認）上映時間は各館のサイトで</p>
+  <p class="pno" data-ch="ニュース2 映画 NAZA"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">今日のまとめ</p>
+  <div class="body">
+    <h2 class="hl">今日の話を<mark>ふり返る</mark></h2>
+    <div class="fig">
+      <div class="ansrows">
+        <div class="r st"><p class="k">仕組みの発表</p><p class="v">止まったら気づけて　壊れたら戻せる形にする</p></div>
+        <div class="r st"><p class="k">PHP の穴</p><p class="v">直す立場か確かめ　誰が何時間で当てるか決める</p></div>
+        <div class="r st"><p class="k">映画 NAZA</p><p class="v">人が確かめる所と時間を先に決めておく</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="pno" data-ch="まとめ"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">宿題</p>
+  <div class="body">
+    <h2 class="hl">次回までに<mark>やること</mark></h2>
+    <div class="fig">
+      <ul class="checks c2 ex">
+        <li class="st">サイトを誰が直すか聞く</li>
+        <li class="st">弱い所を1つ直す</li>
+        <li class="st">前の時間を測って書く</li>
+        <li class="st">止まったら知らせる</li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="まとめ"></p>
+</section>
+
+<section class="slide stmt">
+  <div class="body">
+    <h2 class="hl">動いたことと<br><mark>動き続けること</mark>は別</h2>
+    <p class="note">止まったら気づけて 壊れたら戻せる</p>
+  </div>
+  <p class="pno" data-ch="まとめ"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">出典</p>
+  <div class="body">
+    <h2 class="hl">ニュース1 PHP の穴の<mark>出典</mark></h2>
+    <div class="fig">
+      <ul class="srclist">
+        <li><b>php.net</b><span class="t">PHP 8.5.12 ほかのリリース告知（2026年10月21日）</span><span class="at">ニュース・時系列</span></li>
+        <li><b>PHP 財団</b><span class="t">今回のリリースと今後の強化（10月21日）</span><span class="at">時系列・発見</span></li>
+        <li><b>IPA</b><span class="t">PHP の脆弱性対策について（10月21日・22日）</span><span class="at">ニュース・うちは？</span></li>
+        <li><b>JPCERT/CC</b><span class="t">注意喚起 JPCERT-AT-2026-0033（10月22日）</span><span class="at">乗っ取り・聞き方</span></li>
+        <li><b>首相の X</b><span class="t">高市早苗 2026年10月21日 21:55 の投稿</span><span class="at">首相の呼びかけ</span></li>
+        <li><b>ITmedia</b><span class="t">首相の呼びかけを報じた記事（10月22日）</span><span class="at">首相の呼びかけ</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="出典"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">出典</p>
+  <div class="body">
+    <h2 class="hl">ニュース1 PHP の穴の<mark>出典</mark>（続き）</h2>
+    <div class="fig">
+      <ul class="srclist">
+        <li><b>OpenAI</b><span class="t">重大な脆弱性の協調開示（2026年10月21日）</span><span class="at">発見・これから</span></li>
+        <li><b>Wiz</b><span class="t">PHP2Shell の技術解説（10月21日）</span><span class="at">発見・比べる</span></li>
+        <li><b>Amazon</b><span class="t">公表前の悪用の試行を観測（10月21日）</span><span class="at">時系列・これから</span></li>
+        <li><b>W3Techs</b><span class="t">PHP と WordPress の利用率（10月22日に確認）</span><span class="at">どれくらい</span></li>
+        <li><b>piyolog</b><span class="t">PHP の2件の深刻な脆弱性のまとめ（10月21日）</span><span class="at">211組織</span></li>
+        <li><b>過去と今後</b><span class="t">heartbleed.com・英 NAO・MONOist・CyberScoop・Anthropic・英 NCSC</span><span class="at">比べる・これから</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="出典"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">出典</p>
+  <div class="body">
+    <h2 class="hl">ニュース2 映画 NAZA の<mark>出典</mark></h2>
+    <div class="fig">
+      <ul class="srclist">
+        <li><b>配給</b><span class="t">トランスフォーマー『NAZA ナザ』公式サイトと予告編</span><span class="at">映画・予告編</span></li>
+        <li><b>Guardian</b><span class="t">NAZA の世界公開の発表（2026年9月24日）</span><span class="at">映画・題の意味</span></li>
+        <li><b>Guardian</b><span class="t">受賞の言葉（9月13日）と監督の動画（10月17日）</span><span class="at">監督・動画</span></li>
+        <li><b>+972</b><span class="t">Lavender（2024年4月3日）と The Gospel（2023年11月）</span><span class="at">仕組み・数字</span></li>
+        <li><b>Guardian</b><span class="t">Lavender の報道と軍の声明（2024年4月3日）</span><span class="at">数字・軍の説明</span></li>
+        <li><b>Guardian</b><span class="t">映画への軍の反論と再反論（2026年10月1日）</span><span class="at">軍の説明</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="出典"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">出典</p>
+  <div class="body">
+    <h2 class="hl">ニュース2 映画 NAZA の<mark>出典</mark>（続き）</h2>
+    <div class="fig">
+      <ul class="srclist">
+        <li><b>AFP</b><span class="t">受賞と軍の反応（2026年9月11日・12日）</span><span class="at">軍の説明・誰が</span></li>
+        <li><b>赤十字</b><span class="t">国連安保理での発言（2025年9月26日）</span><span class="at">人の確認</span></li>
+        <li><b>Microsoft</b><span class="t">一部サービスの停止の発表（2025年9月25日）</span><span class="at">IT 企業</span></li>
+        <li><b>報道</b><span class="t">Guardian（2025年8月）・+972（10月）・AP（2月）</span><span class="at">IT 企業</span></li>
+        <li><b>+972・CPJ</b><span class="t">記者の禁止と検閲（2026年）・記者の死者（9月時点）</span><span class="at">情報統制</span></li>
+        <li><b>国連</b><span class="t">事務総長（2024年4月）・調査委員会（2025年9月）</span><span class="at">誰が</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="出典"></p>
+</section>
+
+<section class="slide">
+  <p class="ttl">出典</p>
+  <div class="body">
+    <h2 class="hl">写真と画像の<mark>出典</mark></h2>
+    <div class="fig">
+      <ul class="srclist">
+        <li><b>首相の写真</b><span class="t">首相官邸（Wikimedia Commons・CC BY 4.0）</span><span class="at">首相の呼びかけ</span></li>
+        <li><b>首相の投稿</b><span class="t">高市早苗 X（2026年10月21日 21:55）の画面</span><span class="at">投稿の全文</span></li>
+        <li><b>監督の写真</b><span class="t">LucaFazPhoto（ヴェネチア 2026年9月・CC BY-SA 4.0）</span><span class="at">監督は誰か</span></li>
+        <li><b>映画の写真</b><span class="t">配給 トランスフォーマー公式サイトの場面写真</span><span class="at">どんな映画か</span></li>
+        <li><b>画面の写し</b><span class="t">IPA 注意喚起（2026年10月22日）</span><span class="at">今週のニュース</span></li>
+        <li><b>人物の画像</b><span class="t">ChatGPT で生成した写真風の画像（実在の人物ではない）</span><span class="at">よくある声ほか</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="pno" data-ch="出典"></p>
+</section>
+
+</div>
+<script src="assets/deck.js"></script>
+<script src="assets/local.js"></script>
+</body>
+</html>

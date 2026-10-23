@@ -1,0 +1,13 @@
+
+
+
+
+.qwrap.ph { grid-template-columns: 330px 1fr; gap: 32px; }   
+.qwrap.ph { grid-template-rows: minmax(0, 1fr); }
+.qwrap.ph > * { min-height: 0; }
+.qwrap.ph .face { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 22%; border-radius: 14px; }
+
+.illtext .pic img.ph { mix-blend-mode: normal; border-radius: 12px; }
+.voice .vc .ill.ph { height: 340px; border-radius: 16px; }
+
+.pair .col.ph.contain.xpost { background: #000; }
